@@ -18,7 +18,7 @@ iot_client.upload_telemetry(telemetry_1)
 
 # Telemetry upload, values and timestamp.
 telemetry_2 = {
-    "ts": int(time()),
+    "timestamp": int(time()),
     "values": {
         "ph": 8,
         "conductivity": 16.6,
