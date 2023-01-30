@@ -2,7 +2,7 @@ import requests
 
 
 class IotCLient:
-    _SERVER_URL = 'https://iot-app.herokuapp.com'
+    _SERVER_URL = "https://iot-app.herokuapp.com/api"
     _client_token: str = None
 
     def __init__(self, token: str) -> None:
@@ -42,9 +42,10 @@ class IotCLient:
 
         Return: None
         """
-        telemetry_endpoint = f"{self._SERVER_URL}/devices/{self._client_token}/telemetry"
-        response = requests.post(url=telemetry_endpoint, data=telemetry)
+        telemetry_endpoint = (
+            f"{self._SERVER_URL}/devices/{self._client_token}/telemetry"
+        )
+        response = requests.post(url=telemetry_endpoint, json=telemetry)
 
         if not response.ok:
-            raise Exception(
-                "The telemetry data couldn't be loaded", response.json())
+            raise Exception("The telemetry data couldn't be loaded", response.json())
