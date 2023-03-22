@@ -43,7 +43,7 @@ class IotCLient:
         Return: None
         """
         telemetry_endpoint = (
-            f"{self._SERVER_URL}/devices/{self._client_token}/telemetry"
+            f"{self._SERVER_URL}/telemetry/{self._client_token}/telemetry"
         )
         response = requests.post(url=telemetry_endpoint, json=telemetry)
 
