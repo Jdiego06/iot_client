@@ -2,7 +2,7 @@ import requests
 
 
 class IotCLient:
-    _SERVER_URL = "https://iot-app.herokuapp.com/api"
+    _SERVER_URL = "https://aeronic.herokuapp.com/api"
     _client_token: str = None
 
     def __init__(self, token: str) -> None:
